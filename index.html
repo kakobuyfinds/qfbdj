@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>YoyBuy spreadsheet: categorías, tallas y guía de compra</title>
+<meta name="description" content="Explora YoyBuy spreadsheet en español: categorías de moda, revisión de fotos QC, medidas y una guía práctica para comparar artículos antes de comprar.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#173d43">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="YoyBuy spreadsheet | Elegir con criterio">
+<meta property="og:description" content="Una guía independiente para explorar categorías y comparar medidas, fotos y costes pendientes.">
+<meta name="twitter:card" content="summary">
+<style>
+:root{--ink:#182f32;--muted:#526466;--paper:#f5f2e9;--white:#fffefa;--line:#d3d9d0;--deep:#173d43;--lime:#e6efb0;--orange:#a74425;--radius:18px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:inherit;text-underline-offset:4px}a:hover{text-decoration-thickness:2px}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+img{display:block;max-width:100%;height:auto}
+header,main,footer{width:min(1180px,92%);margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:23px 0;border-bottom:1px solid var(--line)}
+.brand{font-size:clamp(17px,3vw,24px);font-weight:850;text-decoration:none;letter-spacing:-.6px}
+.top span{font-size:13px;color:var(--muted)}
+.eyebrow{text-transform:uppercase;font-size:12px;font-weight:800;letter-spacing:2px;color:var(--orange);margin:0 0 12px}
+h1,h2,h3{line-height:1.13;letter-spacing:-.035em}
+h1{font-size:clamp(38px,5.6vw,72px);margin:0 0 24px}
+h2{font-size:clamp(28px,3.5vw,42px);margin:0 0 20px}
+h3{font-size:23px;margin:0 0 14px}p{margin:0 0 18px}
+.categories{padding:26px 0}
+.category-head{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:15px}
+.category-head h2{font-size:20px;margin:0}
+.category-head p{font-size:13px;margin:0;color:var(--muted)}
+.category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.category-grid a{padding:14px 12px;border:1px solid var(--line);border-radius:9px;background:var(--white);font-weight:700;text-decoration:none;line-height:1.35;font-size:14px}
+.category-grid a:hover{background:var(--lime);border-color:var(--deep)}
+.category-grid small{display:block;font-weight:400;color:var(--muted);margin-top:5px;font-size:12px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;padding:42px 0 58px}
+.hero-copy{max-width:650px}.lead{font-size:19px;color:var(--muted)}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:13px 23px;background:var(--deep);color:white;border-radius:100px;text-decoration:none;font-weight:750}
+.button:hover{background:#285860}
+.hero figure{margin:0;background:white;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);transform:rotate(1deg)}
+.hero img{width:100%;aspect-ratio:1;object-fit:contain}
+.hero figcaption{padding:15px 20px;background:var(--lime);font-size:13px}
+.answer{background:var(--deep);color:white;border-radius:var(--radius);padding:30px;display:grid;grid-template-columns:1fr 2fr;gap:35px}
+.answer h2{font-size:26px;margin:0}.answer p{margin:0;color:#edf2ed}
+.section{padding:64px 0;border-bottom:1px solid var(--line)}
+.intro{max-width:780px;color:var(--muted)}
+.moodboard{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.moodboard figure{margin:0;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.moodboard img{width:100%;aspect-ratio:1;object-fit:contain;background:white}
+.moodboard figcaption{padding:19px;font-size:14px}
+.moodboard strong{display:block;font-size:18px;margin-bottom:6px}
+.moodboard a{display:inline-block;margin-top:12px;font-weight:750}
+.split{display:grid;grid-template-columns:.7fr 1.3fr;gap:55px}
+.steps{list-style:none;padding:0;margin:0;counter-reset:step}
+.steps li{position:relative;padding:0 0 27px 55px;counter-increment:step}
+.steps li:before{content:"0" counter(step);position:absolute;left:0;top:0;font-size:19px;color:var(--orange);font-weight:800}
+.steps h3{font-size:21px}.steps p{color:var(--muted);margin:0}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;background:var(--white);font-size:15px}
+caption{text-align:left;font-weight:750;margin-bottom:14px}
+th,td{text-align:left;padding:16px;border-bottom:1px solid var(--line);vertical-align:top}thead{background:var(--lime)}
+.articles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.articles article{padding:26px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius)}
+.articles .tag{font-size:12px;font-weight:800;color:var(--orange);display:block;margin-bottom:15px}
+.articles p{font-size:15px;color:var(--muted)}.articles a{font-weight:700;font-size:14px}
+.note{padding:23px;border-left:4px solid var(--orange);background:#ece8dd;margin-top:28px;font-size:14px}
+.faq{max-width:860px}.faq details{border-bottom:1px solid var(--line);padding:21px 0}
+.faq summary{cursor:pointer;font-weight:750;font-size:18px}
+.faq details p{padding-top:13px;margin:0;color:var(--muted)}
+.last{margin:45px 0;background:var(--lime);padding:36px;border-radius:var(--radius);display:flex;justify-content:space-between;align-items:center;gap:25px}
+.last h2{font-size:30px;margin:0 0 9px}.last p{margin:0;max-width:660px}
+footer{padding:0 0 35px;font-size:13px;color:var(--muted)}footer p{max-width:900px}
+::selection{background:var(--lime);color:var(--ink)}
+@media(max-width:900px){.category-grid{grid-template-columns:repeat(3,1fr)}.hero{gap:25px}.moodboard{grid-template-columns:repeat(2,1fr)}.articles{grid-template-columns:1fr}.split{grid-template-columns:1fr;gap:25px}}
+@media(max-width:620px){.top{align-items:flex-start;flex-direction:column;gap:4px}.category-head{display:block}.category-head p{margin-top:8px}.category-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr;padding-top:22px;gap:24px}.hero figure{transform:none;max-width:420px}.answer{grid-template-columns:1fr;gap:14px;padding:25px}.section{padding:42px 0}.moodboard{gap:10px}.moodboard figcaption{padding:14px}.moodboard strong{font-size:16px}.last{display:block;padding:25px}.last .button{margin-top:20px}th,td{padding:12px;min-width:135px}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "YoyBuy spreadsheet: categorías, tallas y guía de compra",
+      "inLanguage": "es",
+      "description": "Guía independiente de categorías, fotos QC, medidas y planificación de compra. Los enlaces de exploración llevan a HipobuyFind."
+    },
+    {
+      "@type": "FAQPage",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es una YoyBuy spreadsheet?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Es una hoja o recopilación de enlaces para organizar y comparar artículos. Puede incluir categoría, variante, medidas y fotos; no sustituye la ficha original ni confirma disponibilidad."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Esta página pertenece oficialmente a YoyBuy?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. Es una guía independiente. Los enlaces de exploración llevan a HipobuyFind y no a una cuenta ni a un pago de YoyBuy."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Las fotos QC demuestran que un artículo es auténtico?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. Las fotos QC pueden ayudar a revisar aspecto, medidas o defectos visibles, pero no son una certificación de autenticidad ni una prueba completa de calidad."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo elijo una talla si solo aparece S, M o L?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Busca medidas en centímetros y compáralas con una prenda que ya te quede bien. En calzado, revisa la longitud de la plantilla y la tabla del modelo; no supongas una equivalencia universal."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿El precio de una ficha incluye todo el envío?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No debe darse por hecho. Comprueba por separado el artículo, el transporte nacional, los servicios, el envío internacional y los impuestos aplicables al destino."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo comprar cualquier enlace con YoyBuy?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No lo presupongas. Confirma directamente con el servicio elegido si admite la plataforma de origen, el artículo y el país de destino antes de enviar dinero."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se abren las categorías de esta guía?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Las diez categorías abren las páginas correspondientes de hipobuyfind.com. Los demás enlaces de navegación llevan a https://www.hipobuyfind.com."}
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/qfbdj/">
+</head>
+<body>
+<!-- index.html
+Referencias de investigación: qcradar.com, yoybuy.io, one-to-oneyupoo.com, yoybuy.org,
+cssbuy.tips, yoyubuy.com, kakous.net, yoybuysheet.com, yoybuy.digital y yoybuyfinds.com.
+La búsqueda disponible no permite confirmar que estos dominios sean exactamente los diez
+primeros resultados de Google. Las referencias se usaron para identificar temas, no para
+reproducir sus textos ni sus afirmaciones comerciales. -->
+<header>
+  <div class="top">
+    <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+    <span>Guía independiente · En español</span>
+  </div>
+  <nav class="categories" aria-label="Categorías de productos">
+    <div class="category-head"><h2>Empieza por una categoría</h2><p>Los enlaces abren HipobuyFind</p></div>
+    <div class="category-grid">
+      <a href="https://hipobuyfind.com/category-911-Shoes.html">Shoes <small>Zapatillas y calzado ↗</small></a>
+      <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies/Sweaters <small>Sudaderas y jerséis ↗</small></a>
+      <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts <small>Camisetas ↗</small></a>
+      <a href="https://hipobuyfind.com/category-914-Jackets.html">Jackets <small>Chaquetas ↗</small></a>
+      <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pants/Shorts <small>Pantalones largos y cortos ↗</small></a>
+      <a href="https://hipobuyfind.com/category-916-Headwear.html">Headwear <small>Gorras y gorros ↗</small></a>
+      <a href="https://hipobuyfind.com/category-917-Sets.html">Sets <small>Conjuntos ↗</small></a>
+      <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Underwear/underpants <small>Ropa interior ↗</small></a>
+      <a href="https://hipobuyfind.com/category-919-Jersey.html">Jersey <small>Camisetas deportivas ↗</small></a>
+      <a href="https://hipobuyfind.com/category-920-Accessories.html">Accessories <small>Complementos ↗</small></a>
+    </div>
+  </nav>
+</header>
+<main>
+  <section class="hero" aria-labelledby="title">
+    <div class="hero-copy">
+      <p class="eyebrow">Cuaderno de selección / moda y detalles</p>
+      <h1 id="title">YoyBuy spreadsheet.<br>Menos dudas, mejores comparaciones.</h1>
+      <p class="lead">Elige una categoría, compara las medidas y apunta lo que te falta por comprobar. Así puedes volver a una ficha sin perder de vista qué variante te interesaba y por qué.</p>
+      <a class="button" href="https://www.hipobuyfind.com">Explorar en HipobuyFind ↗</a>
+    </div>
+    <figure>
+      <img src="https://www.tike.gr/files/images/products/media/CW2/CW2288-111/images/CW2288-111.jpg.webp" alt="Vista lateral de una zapatilla Nike Air Force 1 blanca con Swoosh blanco y suela gruesa" width="600" height="600" fetchpriority="high" decoding="async">
+      <figcaption>Nike Air Force 1 como referencia visual. La imagen no acredita existencias ni autenticidad en el catálogo de destino.</figcaption>
+    </figure>
+  </section>
+
+  <section class="answer" aria-labelledby="short-answer">
+    <h2 id="short-answer">¿Para qué sirve esta guía?</h2>
+    <p>Una <strong>YoyBuy spreadsheet</strong> permite ordenar enlaces y comparar artículos antes de decidir. Aquí tienes diez categorías y criterios para revisar tallas, materiales, fotos y coste completo. La exploración de productos continúa en HipobuyFind. Esta página es una guía independiente.</p>
+  </section>
+
+  <section class="section" aria-labelledby="visual-title">
+    <p class="eyebrow">Referencias visuales</p>
+    <h2 id="visual-title">Del calzado al último detalle</h2>
+    <p class="intro">Estas imágenes muestran referencias de Louis Vuitton, Dior, Gucci y Hermès. Ilustran qué observar en cada tipo de artículo y no representan existencias del catálogo de destino.</p>
+    <div class="moodboard">
+      <figure>
+        <img src="https://sivora-it.com/cdn/shop/collections/trainersneaker.jpg?width=600" width="400" height="400" alt="Zapatillas de referencia Louis Vuitton blancas y azules con paneles de monograma, junto a su caja" loading="lazy" decoding="async">
+        <figcaption><strong>Louis Vuitton / volumen</strong>Compara la forma de la puntera, la suela y la longitud interior.<br><a href="https://www.hipobuyfind.com">Explorar el catálogo ↗</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/086/735/715/original/1130293_01.jpg.jpeg?action=crop&amp;width=600" width="400" height="400" alt="Camiseta negra Dior de manga corta con logotipo blanco en el pecho" loading="lazy" decoding="async">
+        <figcaption><strong>Dior / proporción</strong>El ancho de pecho y el largo ayudan más que una etiqueta de talla.<br><a href="https://www.hipobuyfind.com">Comparar prendas ↗</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://brandol.jp/upload/save_image/gu-200035-kqwbg-9791-l_1.jpg" width="400" height="400" alt="Gorra de béisbol Gucci beige con monograma GG y visera curva" loading="lazy" decoding="async">
+        <figcaption><strong>Gucci / ajuste</strong>Revisa el contorno, la profundidad de copa y el sistema de cierre.<br><a href="https://www.hipobuyfind.com">Ver más referencias ↗</a></figcaption>
+      </figure>
+      <figure>
+        <img src="https://assets.hermes.com/is/image/hermesproduct/bracciale-tonight--500041FJ0X-worn-1-0-0-1000-1000_g.jpg?wid=600" width="400" height="400" alt="Pulsera Hermès Tonight de cuero naranja con cierre metálico en forma de H" loading="lazy" decoding="async">
+        <figcaption><strong>Hermès / acabado</strong>Comprueba el contorno útil, los bordes y el funcionamiento del cierre.<br><a href="https://www.hipobuyfind.com">Explorar complementos ↗</a></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section split" aria-labelledby="guide-title">
+    <div>
+      <p class="eyebrow">Guía de compra YoyBuy</p>
+      <h2 id="guide-title">Cómo utilizar una YoyBuy spreadsheet sin perder el contexto</h2>
+      <p class="intro">Una fila útil te permite volver mañana y saber qué variante viste, por qué la guardaste y qué dato faltaba.</p>
+    </div>
+    <ol class="steps">
+      <li><h3>Define una necesidad</h3><p>Empieza por zapatillas para uso diario, una sudadera de corte amplio o una camiseta deportiva. Compara artículos con la misma función antes de valorar materiales y tallas.</p></li>
+      <li><h3>Conserva la referencia</h3><p>Anota el enlace original del producto, el nombre del modelo y la variante de color. Una captura aislada no permite revisar si la ficha cambió o si elegiste otra versión.</p></li>
+      <li><h3>Resuelve el ajuste</h3><p>Busca una tabla de tallas en centímetros. Compara el ancho de pecho y el largo de manga con una prenda propia. Para pantalones, utiliza cintura, tiro y entrepierna.</p></li>
+      <li><h3>Confirma las condiciones</h3><p>Revisa la disponibilidad de la variante y la política de devoluciones. Confirma con el agente elegido la compatibilidad del enlace antes de pagar.</p></li>
+    </ol>
+  </section>
+
+  <section class="section" aria-labelledby="qc-title">
+    <p class="eyebrow">YoyBuy QC / revisión visual</p>
+    <h2 id="qc-title">Qué fotos y medidas pedir según la categoría</h2>
+    <p class="intro">Una foto de control de calidad puede mostrar detalles de una unidad concreta. Antes de evaluarla, verifica que corresponde al modelo, al color y a la talla que has seleccionado.</p>
+    <div class="table-wrap">
+      <table>
+        <caption>Qué revisar al comparar ropa, calzado y accesorios</caption>
+        <thead><tr><th scope="col">Categoría</th><th scope="col">Detalle útil</th><th scope="col">Pregunta que resuelve</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Zapatillas</th><td>Longitud de plantilla, vista de suela y par completo.</td><td>¿El tamaño y el acabado coinciden con lo que busco?</td></tr>
+          <tr><th scope="row">Sudaderas y camisetas</th><td>Medidas de pecho, hombro y largo; composición del tejido.</td><td>¿Es un corte amplio o una talla simplemente mayor?</td></tr>
+          <tr><th scope="row">Chaquetas</th><td>Fotos de forro, cremalleras, costuras y puños.</td><td>¿La construcción responde al uso previsto?</td></tr>
+          <tr><th scope="row">Pantalones y conjuntos</th><td>Cintura, entrepierna y medidas de ambas piezas.</td><td>¿Encajan las proporciones de todo el conjunto?</td></tr>
+          <tr><th scope="row">Gorras y gorros</th><td>Contorno de cabeza y margen de ajuste.</td><td>¿El cierre permite el ajuste que necesito?</td></tr>
+          <tr><th scope="row">Bisutería y complementos</th><td>Material declarado, dimensiones y fotos del cierre.</td><td>¿Conozco el tamaño y la composición, además del aspecto?</td></tr>
+          <tr><th scope="row">Ropa interior y camisetas deportivas</th><td>Composición, elasticidad, medidas y condiciones de devolución.</td><td>¿He comprobado el ajuste y las posibles restricciones?</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="articles-title">
+    <p class="eyebrow">Artículos prácticos</p>
+    <h2 id="articles-title">Tres preguntas antes de guardar un hallazgo</h2>
+    <div class="articles">
+      <article>
+        <span class="tag">01 / YoyBuy finds</span>
+        <h3>¿Tengo información suficiente?</h3>
+        <p>Si solo hay una foto frontal, busca vistas de los detalles que cambiarían tu decisión. Para revisar costuras y estampados, pide imágenes enfocadas. En accesorios, comprueba cierres y dimensiones.</p>
+        <p>Guarda la fecha de consulta junto a la variante elegida. Si un enlace antiguo abre otra ficha, confirma el modelo y el color antes de incluirlo de nuevo en tu lista.</p>
+        <a href="https://www.hipobuyfind.com">Continuar la exploración ↗</a>
+      </article>
+      <article>
+        <span class="tag">02 / YoyBuy tallas</span>
+        <h3>¿Estoy comparando la misma medida?</h3>
+        <p>Si una tabla indica ancho de pecho medido en plano, compáralo con el ancho de una camiseta propia medido del mismo modo. No lo compares directamente con tu contorno corporal.</p>
+        <p>Para zapatillas, distingue longitud del pie y longitud de plantilla. Consulta la tabla del modelo antes de convertir tallas EU y US. En conjuntos, revisa la parte superior y la inferior por separado.</p>
+        <a href="https://www.hipobuyfind.com">Explorar opciones con criterio ↗</a>
+      </article>
+      <article>
+        <span class="tag">03 / YoyBuy envío</span>
+        <h3>¿Conozco el coste completo?</h3>
+        <p>Compara el precio del artículo, el transporte nacional, los servicios, el envío internacional y los impuestos aplicables. Anota la moneda y la fecha de la cotización para comparar importes equivalentes.</p>
+        <p>El peso del paquete y sus dimensiones pueden influir en el transporte según la ruta. Antes de agrupar artículos, confirma el embalaje, las restricciones del transportista y las condiciones para el país de destino.</p>
+        <a href="https://www.hipobuyfind.com">Abrir el directorio ↗</a>
+      </article>
+    </div>
+    <aside class="note"><strong>Ejemplo de una nota útil:</strong> «Variante negra; medidas pendientes; comprobar cierre; confirmar envío al destino». Anota por separado lo que ya sabes y lo que aún necesitas preguntar.</aside>
+  </section>
+
+  <section class="section" aria-labelledby="faq-title">
+    <p class="eyebrow">Respuestas directas</p>
+    <h2 id="faq-title">Preguntas frecuentes</h2>
+    <div class="faq">
+      <details open>
+        <summary>¿Qué es una YoyBuy spreadsheet?</summary>
+        <p>Es una hoja o recopilación de enlaces para organizar y comparar artículos. Puede incluir categoría, variante, medidas y fotos; no sustituye la ficha original ni confirma disponibilidad.</p>
+      </details>
+      <details>
+        <summary>¿Esta página pertenece oficialmente a YoyBuy?</summary>
+        <p>No. Es una guía independiente. Los enlaces de exploración llevan a HipobuyFind y no a una cuenta ni a un pago de YoyBuy.</p>
+      </details>
+      <details>
+        <summary>¿Las fotos QC demuestran que un artículo es auténtico?</summary>
+        <p>No. Las fotos QC pueden ayudar a revisar aspecto, medidas o defectos visibles, pero no son una certificación de autenticidad ni una prueba completa de calidad.</p>
+      </details>
+      <details>
+        <summary>¿Cómo elijo una talla si solo aparece S, M o L?</summary>
+        <p>Busca medidas en centímetros y compáralas con una prenda que ya te quede bien. En calzado, revisa la longitud de la plantilla y la tabla del modelo; no supongas una equivalencia universal.</p>
+      </details>
+      <details>
+        <summary>¿El precio de una ficha incluye todo el envío?</summary>
+        <p>No debe darse por hecho. Comprueba por separado el artículo, el transporte nacional, los servicios, el envío internacional y los impuestos aplicables al destino.</p>
+      </details>
+      <details>
+        <summary>¿Puedo comprar cualquier enlace con YoyBuy?</summary>
+        <p>No lo presupongas. Confirma directamente con el servicio elegido si admite la plataforma de origen, el artículo y el país de destino antes de enviar dinero.</p>
+      </details>
+      <details>
+        <summary>¿Dónde se abren las categorías de esta guía?</summary>
+        <p>Las diez categorías abren las páginas correspondientes de hipobuyfind.com. Los demás enlaces de navegación llevan a https://www.hipobuyfind.com.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="last" aria-label="Explorar el catálogo">
+    <div>
+      <h2>Empieza con dos o tres opciones</h2>
+      <p>Elige una categoría y guarda los artículos cuyas medidas, variante y condiciones puedas comprobar.</p>
+    </div>
+    <a class="button" href="https://www.hipobuyfind.com">Ir a HipobuyFind ↗</a>
+  </section>
+</main>
+<footer>
+  <p><strong>hipobuyfind.com · Guía independiente en español.</strong> Sin afiliación oficial con YoyBuy, Nike, Louis Vuitton, Gucci, Hermès o Dior. Las marcas identifican referencias visuales. Las imágenes proceden de sitios externos y no acreditan autenticidad ni disponibilidad. Consulta las condiciones de cada artículo en su ficha de origen.</p>
+  <a href="https://www.hipobuyfind.com">Explorar HipobuyFind</a>
+</footer>
+</body>
+</html>
